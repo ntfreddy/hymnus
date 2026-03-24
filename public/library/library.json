@@ -1,0 +1,13 @@
+{
+    "version": "1.0",
+    "books": [
+        {
+            "id": "001",
+            "path": "/library/book-001/book.json"
+        },
+        {
+            "id": "002",
+            "path": "/library/book-002/book.json"
+        }
+    ]
+}

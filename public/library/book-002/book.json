@@ -1,0 +1,11 @@
+{
+  "id": "002",
+  "title": "Indirimbo Zo Gutazira Imana",
+  "theme": {
+    "primaryColor": "#752b2aff",
+    "secondaryColor": "#e9afafff",
+    "background": "#461a19ff"
+  },
+  "logo": "/assets/logos/002.png",
+  "songs": ["001", "002"]
+}
