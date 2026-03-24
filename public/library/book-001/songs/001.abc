@@ -1,12 +1,14 @@
 X:1
-T:1. Wumv'Amatur'Agwa
-T:HEAR THE PENNIES DROPPING
+T:1. Murinzi We, Vuz' Impanda
+T:WATCHMAN, BLOW THE GOSPEL TRUMPET
 C: Wm. J. Kirkpatrick
 M:4/4
-L:1/4
+L:1/8
 Q:1/4=100
 K:C
-%%text CS 573
+%%transpose -1
+%%text AH 350
+%%text CH 619
 %%score (S A) (T B)
 %%MIDI program 1
 V:S  clef=treble
@@ -14,37 +16,11 @@ V:A  clef=treble
 V:T  clef=bass
 V:B  clef=bass
 V:S
-E E E F|G c3|G G F E|D4|
-E E E F|G c3|B G A ^F|G4|
-V:A
-C C C D|E E3   |E E D  C |B,4|
-w:1.Wu mv'a-ma-tu-r'a-gwa, U-kw'a-je-ge-ra
-w:2.A-va mu tu-ga-nza, Wu-mv'a-gu-my'a-gwa!
-w:3.U-bu tu-ri ba-to, Ni-yo du-fi-te;
-w:4.Ni-tu-gi-ra bi-ke, Tu-kwi-he Mwa-mi.
-C C C D|E G3   |G E F  D |D4 |
-w:Yo-se n'a-ya Ye-su, Ni-we du-tu-ra
-w:N'i-tu-ro rya Ye-su, Ryo mu twa-na twe.
-w:U-bwo tu-za-ku-ra, Tu-za-su-mbya-ho.
-w:Byo-s'u-za-bya-ki-ra, U-twi-ki-ri-ze.
-V:T
-G, G, G, G,|C G,3     |G, G, G, G,|G,4|
-G, G, G, G,|C G,3     |G, B, C  A,|B,4|
-V:B
-C, C, C, C,|C, C,3|C, C, B,, C,|G,,4|
-C, C, C, C,|C, C,3|D, D, D,  D,|G,4 |
-%%text Gusubiramo
-V:S
-[|c c G G|A A E E|F E D C|G4|
-c c G G|A c3|B B A B|c4|]
-V:A
-[|E E E E|E E C C|F E D  C |B,4 |
-w:A-gwa, a-gwa, a-gwa, a-gwa, A-ma-tu-r'a-gwa,
-G G E E|F G3   |G G F  G |E4 |]
-w:Yo-se n'a-ya Ye-su, Ni-we du-tu-ra
-V:T
-[|G, G, C  C |C C  G, G,|F, E, D, C,|G,4|
-G, G, C  C |C C3      |G, G, G, G,|G,4 |]
-V:B
-[|C, C, C, C,|C, C, C, C,|F, E, D, C,|G,4|
-C, C, C, C,|C, C,3|G, G, G, G,|C,4|]
+C'3 D' C' G', E', G|C'4 E'4|
+w:1.Mu-ri-nzi, jy'u-vu-z'i-mpa-nda;
+A3 B C' B C' E'|D'8
+w:U-ha-n'u-mu-ntu we-se;
+C'3 D' C' G', E', G|C'4 E'4|
+w:Ng'u-zu-mv'i-zo nku-ru nzi-za,
+D'3 E' D' G B A|G8
+w:Yi-ha-n'a-ki-zw'i-bya-ha.
