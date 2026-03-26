@@ -57,13 +57,20 @@ function App() {
 
   return (
     <div className="App" style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
-      <header className="App-header" style={{ padding: '1rem', background: '#282c34', color: 'white' }}>
-        <h2>Hymnos Library</h2>
+      <header className="App-header">
+        <div className="App-title">
+          <img
+            src={process.env.PUBLIC_URL + '/logo192.png'}
+            alt="Hymnus logo"
+            className="App-logo"
+          />
+          <div className="App-title-text">Hymnus</div>
+        </div>
       </header>
-      <div style={{ flex: 1, padding: '20px', display: 'flex', flexDirection: 'column' }}>
+      <div className="App-main" style={{ padding: '20px' }}>
         {/* Search Bar - Always Visible */}
         <input
-          style={{ padding: '10px', marginBottom: '20px', fontSize: '16px', width: '100%', boxSizing: 'border-box' }}
+          className="App-search-input"
           type="text"
           placeholder="Search songs..."
           value={searchTerm}
