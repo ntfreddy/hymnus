@@ -1,4 +1,7 @@
 import re
+import sys
+import argparse
+from pathlib import Path
 
 # -----------------------------
 # SOL-FA → ABC MAPPING
@@ -109,42 +112,67 @@ def convert_line(line):
 # CONVERT FULL TEXT
 # -----------------------------
 def convert_song(text):
-    lines = text.strip().split("\n")
-    output_lines = []
-
+    lines = text.split("\n")
+    voices = {"S": [], "A": [], "T": [], "B": []}
+    VOICE_IDS = ["S", "A", "T", "B"]
+    
+    voice_counter = 0
     for line in lines:
-        line = line.strip()
-        if not line:
-            output_lines.append("")  # keep spacing
+        stripped = line.strip()
+        if not stripped:
+            voice_counter = 0  # Reset for the next block
             continue
 
-        converted = convert_line(line)
-        output_lines.append(converted)
+        if voice_counter < len(VOICE_IDS):
+            converted = convert_line(stripped)
+            voices[VOICE_IDS[voice_counter]].append(converted)
+            voice_counter += 1
 
-    return "\n".join(output_lines)
+    return voices
 
 # -----------------------------
 # OPTIONAL: WRAP INTO ABC FORMAT
 # -----------------------------
-def wrap_abc(body):
-    return f"""X:1
-T:Converted Hymn
-M:4/4
-L:1/4
-K:C
-{body}
-"""
+def wrap_abc(voices):
+    header = "X:1\nT:Converted Hymn\nM:4/4\nL:1/4\nK:C"
+    body_sections = []
+    
+    for v_id in ["S", "A", "T", "B"]:
+        if voices[v_id]:
+            body_sections.append(f"V:{v_id}")
+            body_sections.append("\n".join(voices[v_id]))
+            
+    return header + "\n" + "\n".join(body_sections)
 
 # -----------------------------
 # RUN EXAMPLE
 # -----------------------------
 if __name__ == "__main__":
-    input_data = """|m  :m  !m  :f  |s  :d' !-  :   |s  :s  !f  :m  |r  :-  !-  :   |"""
+    parser = argparse.ArgumentParser(description="Convert Tonic Sol-Fa to ABC notation.")
+    parser.add_argument("input", help="Input file path (e.g., sample1.tsf)")
+    parser.add_argument("-o", "--output", help="Output file path (optional)")
 
-    converted = convert_song(input_data)
+    args = parser.parse_args()
 
-    print("=== ABC Notes ===")
-    print(converted)
+    input_path = Path(args.input)
+    if not input_path.exists():
+        print(f"Error: File {input_path} not found.")
+        sys.exit(1)
 
-    print("\n=== FULL ABC ===")
-    print(wrap_abc(converted))
+    # If no output path is provided, use the input filename with .abc extension
+    output_path = Path(args.output) if args.output else input_path.with_suffix(".abc")
+
+    try:
+        with open(input_path, "r", encoding="utf-8") as f:
+            input_data = f.read()
+
+        voices = convert_song(input_data)
+        full_abc = wrap_abc(voices)
+
+        with open(output_path, "w", encoding="utf-8") as f:
+            f.write(full_abc)
+
+        print(f"Successfully converted '{input_path}' to '{output_path}'")
+    except Exception as e:
+        print(f"An error occurred during conversion: {e}")
+        sys.exit(1)
