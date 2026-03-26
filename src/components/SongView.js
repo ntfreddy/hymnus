@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import abcjs from 'abcjs';
 import 'abcjs/abcjs-audio.css';
 
-function SongView({ tune, onBack }) {
+function SongView({ tune, onBack, theme }) {
   const paperRef = useRef(null);
   const audioRef = useRef(null);
   const synthControlRef = useRef(null);
@@ -43,12 +43,43 @@ function SongView({ tune, onBack }) {
   }, [tune]);
 
   return (
-    <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-      <button onClick={onBack} style={{ alignSelf: 'flex-start', marginBottom: '10px', fontSize: '24px', background: 'none', border: 'none', cursor: 'pointer' }}>
+    <div 
+      style={{ 
+        flex: 1, 
+        display: 'flex', 
+        flexDirection: 'column', 
+        width: '100%', 
+        overflowX: 'hidden', 
+        boxSizing: 'border-box' 
+      }}>
+      <button 
+        onClick={onBack} 
+        style={{ 
+          alignSelf: 'flex-start', 
+          marginBottom: '10px', 
+          fontSize: '24px', 
+          background: 'none', 
+          border: 'none', 
+          cursor: 'pointer',
+          color: theme?.text || 'inherit',
+          paddingLeft: '10px',
+          paddingTop: '10px'
+        }}
+      >
         ←
       </button>
-      <div ref={audioRef} style={{ marginBottom: '10px' }}></div>
-      <div ref={paperRef} style={{ flex: 1 }}></div>
+      <div ref={audioRef} style={{ marginBottom: '10px', width: '100%' }}></div>
+      <div 
+        ref={paperRef} 
+        style={{ 
+          flex: 1, 
+          background: 'white', 
+          padding: '10px', 
+          boxSizing: 'border-box',
+          width: '100%',
+          maxWidth: '100%'
+        }}
+      ></div>
     </div>
   );
 }

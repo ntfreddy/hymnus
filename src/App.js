@@ -72,12 +72,20 @@ function App() {
     (!selectedBook || tune.book === selectedBook.title)
   );
 
+  // Find the book metadata for the selected tune to get its theme
+  const selectedTuneBook = selectedTune ? books.find(b => b.title === selectedTune.book) : null;
+
   const handleBackToSearch = () => {
     setSelectedTune(null);
   };
 
   return (
-    <div className="App" style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+    <div className="App" style={{ 
+      display: 'flex', 
+      flexDirection: 'column', 
+      height: '100vh',
+      backgroundColor: selectedTune && selectedTuneBook ? selectedTuneBook.theme.background : '#ffffff'
+    }}>
       {!selectedTune && (
         <>
           <header className="App-header" style={{ backgroundColor: selectedBook ? selectedBook.theme.background : '#282c34' }}>
@@ -113,7 +121,7 @@ function App() {
         </>
       )}
 
-      <div className="App-main" style={{ padding: selectedTune ? '10px' : '20px' }}>
+      <div className="App-main" style={{ padding: selectedTune ? '0' : '20px' }}>
         {!selectedTune && (
           <input
             className="App-search-input"
@@ -126,7 +134,11 @@ function App() {
 
         {/* Conditional Content: Results or Player */}
         {selectedTune ? (
-          <SongView tune={selectedTune} onBack={handleBackToSearch} />
+          <SongView 
+            tune={selectedTune} 
+            onBack={handleBackToSearch} 
+            theme={selectedTuneBook?.theme}
+          />
         ) : (
           <SongList 
             isLoading={isLoading} 
