@@ -10,10 +10,11 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* Removed fixed background-color; now handled inline in App.js */
   font-size: calc(10px + 2vmin);
   color: white;
   padding: 0.75rem;
+  position: relative; /* For absolute positioning of menu button */
 }
 
 .App-title {
@@ -41,8 +42,70 @@
   font-size: 18px;
   width: 100%;
   box-sizing: border-box;
+  border-radius: 8px;
 }
+
 
 .App-link {
   color: #61dafb;
+}
+
+
+/* New styles for menu */
+.App-menu-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+.App-menu {
+  background: #333;
+  padding: 10px;
+  position: absolute;
+  top: 60px; /* Position below header */
+  right: 10px;
+  width: 250px;
+  z-index: 1000;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.App-menu-header {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.App-books {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.App-book-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+  color: white;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.App-book-item:hover {
+  background: #555;
+}
+
+.App-book-logo {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  border-radius: 4px;
+  object-fit: cover;
 }
