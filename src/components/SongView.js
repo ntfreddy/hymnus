@@ -44,8 +44,8 @@ function SongView({ tune, onBack }) {
 
   return (
     <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-      <button onClick={onBack} style={{ alignSelf: 'flex-start', marginBottom: '10px' }}>
-        Back to Search
+      <button onClick={onBack} style={{ alignSelf: 'flex-start', marginBottom: '10px', fontSize: '24px', background: 'none', border: 'none', cursor: 'pointer' }}>
+        ←
       </button>
       <div ref={audioRef} style={{ marginBottom: '10px' }}></div>
       <div ref={paperRef} style={{ flex: 1 }}></div>

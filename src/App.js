@@ -78,60 +78,51 @@ function App() {
 
   return (
     <div className="App" style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
-      {/* Updated header with dynamic background and menu button */}
-      <header className="App-header" style={{ backgroundColor: selectedBook ? selectedBook.theme.background : '#282c34' }}>
-        <div className="App-title">
-          {selectedBook ? (
-            <>
-              <img
-                src={process.env.PUBLIC_URL + selectedBook.logo}
-                alt={selectedBook.title}
-                className="App-logo"
-              />
-              <div className="App-title-text">{selectedBook.title}</div>
-            </>
-          ) : (
-            <>
-              <img
-                src={process.env.PUBLIC_URL + '/logo192.png'}
-                alt="Hymnus logo"
-                className="App-logo"
-              />
-              <div className="App-title-text">Hymnus</div>
-            </>
-          )}
-        </div>
-        {/* Hamburger menu button */}
-        <button className="App-menu-button" onClick={() => setMenuOpen(!menuOpen)}>☰</button>
-      </header>
-      {/* Menu overlay when open */}
-      {menuOpen && (
-        <div className="App-menu">
-          <div className="App-menu-header">Library</div>
-          <div className="App-books">
-            {/* "All Books" option to reset filter */}
-            <div className="App-book-item" onClick={() => { setSelectedBook(null); setMenuOpen(false); }}>
-              All Books
+      {!selectedTune && (
+        <>
+          <header className="App-header" style={{ backgroundColor: selectedBook ? selectedBook.theme.background : '#282c34' }}>
+            <div className="App-title">
+              {selectedBook ? (
+                <>
+                  <img src={process.env.PUBLIC_URL + selectedBook.logo} alt={selectedBook.title} className="App-logo" />
+                  <div className="App-title-text">{selectedBook.title}</div>
+                </>
+              ) : (
+                <>
+                  <img src={process.env.PUBLIC_URL + '/logo192.png'} alt="Hymnus logo" className="App-logo" />
+                  <div className="App-title-text">Hymnus</div>
+                </>
+              )}
             </div>
-            {/* List of books with logos */}
-            {books.map(book => (
-              <div key={book.id} className="App-book-item" onClick={() => { setSelectedBook(book); setMenuOpen(false); }}>
-                <img src={process.env.PUBLIC_URL + book.logo} alt={book.title} className="App-book-logo" />
-                {book.title}
+            <button className="App-menu-button" onClick={() => setMenuOpen(!menuOpen)}>☰</button>
+          </header>
+          {menuOpen && (
+            <div className="App-menu">
+              <div className="App-menu-header">Library</div>
+              <div className="App-books">
+                <div className="App-book-item" onClick={() => { setSelectedBook(null); setMenuOpen(false); }}>All Books</div>
+                {books.map(book => (
+                  <div key={book.id} className="App-book-item" onClick={() => { setSelectedBook(book); setMenuOpen(false); }}>
+                    <img src={process.env.PUBLIC_URL + book.logo} alt={book.title} className="App-book-logo" />
+                    {book.title}
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
+          )}
+        </>
       )}
-      <div className="App-main" style={{ padding: '20px' }}>
-        {/* Search Bar - Always Visible */}
-        <input
-          className="App-search-input"
-          type="text"
-          placeholder="Search songs..."
-          value={searchTerm}
-          onChange={e => setSearchTerm(e.target.value)}
-        />
+
+      <div className="App-main" style={{ padding: selectedTune ? '10px' : '20px' }}>
+        {!selectedTune && (
+          <input
+            className="App-search-input"
+            type="text"
+            placeholder="Search songs..."
+            value={searchTerm}
+            onChange={e => setSearchTerm(e.target.value)}
+          />
+        )}
 
         {/* Conditional Content: Results or Player */}
         {selectedTune ? (
