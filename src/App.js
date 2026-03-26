@@ -81,12 +81,25 @@ function App() {
       {/* Updated header with dynamic background and menu button */}
       <header className="App-header" style={{ backgroundColor: selectedBook ? selectedBook.theme.background : '#282c34' }}>
         <div className="App-title">
-          <img
-            src={process.env.PUBLIC_URL + '/logo192.png'}
-            alt="Hymnus logo"
-            className="App-logo"
-          />
-          <div className="App-title-text">Hymnus</div>
+          {selectedBook ? (
+            <>
+              <img
+                src={process.env.PUBLIC_URL + selectedBook.logo}
+                alt={selectedBook.title}
+                className="App-logo"
+              />
+              <div className="App-title-text">{selectedBook.title}</div>
+            </>
+          ) : (
+            <>
+              <img
+                src={process.env.PUBLIC_URL + '/logo192.png'}
+                alt="Hymnus logo"
+                className="App-logo"
+              />
+              <div className="App-title-text">Hymnus</div>
+            </>
+          )}
         </div>
         {/* Hamburger menu button */}
         <button className="App-menu-button" onClick={() => setMenuOpen(!menuOpen)}>☰</button>
