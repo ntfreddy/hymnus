@@ -7,5 +7,8 @@
     "background": "#461a19ff"
   },
   "logo": "/assets/logos/izgi-rw.png",
-  "songs": ["001", "014"]
+  "songs": [
+    "001", 
+    "002",
+    "014"]
 }
