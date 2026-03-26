@@ -61,7 +61,7 @@ function SongView({ tune, onBack, theme }) {
           background: 'none', 
           border: 'none', 
           cursor: 'pointer',
-          color: theme?.text || 'inherit',
+          color: 'white',
           paddingLeft: '10px',
           paddingTop: '10px'
         }}
