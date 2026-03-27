@@ -1,0 +1,39 @@
+X:1
+T:1. Murinzi We, Vuz' Impanda
+T:WATCHMAN, BLOW THE GOSPEL TRUMPET
+C: Wm. J. Kirkpatrick
+M:4/4
+L:1/8
+Q:1/4=100
+K:C
+%%text AH 350
+%%text CH 619
+%%score (S A) (T B)
+V:S  clef=treble
+V:A  clef=treble
+V:T  clef=bass
+V:B  clef=bass
+V:S
+C'3 D' C' G', E', G |C'4 E'4|A3       B  C' B  C' E' |D'8|
+C'3 D' C' G', E', G |C'4 E'4|D'3      E' D' G  B  A  |G8 |
+V:A
+E3  F  E  G', E', G |E4  G4 |F3       F  ^F ^F ^F ^F |G8 |
+E3  F  E  G', E', G |E4  G4 |G3       G  G  G  ^F ^F |G8 |
+V:T
+G,3  G,  G,  G,   E,   G, |G,4  C,4 |C3       D  D  D  A,  C  |B,8 |
+G,3  G,  G,  G,   E,   G, |G,4  C,4 |B,3       C   B,  B,  D  C  |B,8 |
+V:B
+C,3  C,  C,  G,   E,   G, |C,4  C,4 |F,3       F,  D,  D,  D,  D,  |G,8 |														   
+C,3  C,  C,  G,   E,   G, |C,4  C,4 |D,3       D,  D,  D,  D,  D,  |G,8 |
+V:S
+F'3 D' B  G   E'  D'|C'4    G4 |C'3      C' C' B C' D'|E'8 |
+E'3 D' C' G   C'  E'|G'4    F'4|F' E' D' C' E'2  D'2  |C'8 |
+V:A
+B3  B  G  G   G   G |E4      E4|E3       E  A2   A2   |^G2 A2 ^G4 |
+G3  F  E  E   E   G |G2 ^B2  A4|A  A  A  A  G2   F2   |E8 |
+V:T
+|D3 D  D  B   G   F |C4      C4|C3       C  A2   A2   |B2  C2 B4  |
+|C3 G  G  C   C   C |C4      C4|D  C C   C  C2   B2   |C8   |
+V:B
+|G,3 G,  G,  G,   G,   G, |A,4      C,4|A,3       A,  F,2   F,2   |E,2 A,2 E,4   |																	   
+|C,3 C,  C,  C,   C,   C, |E,3      F,4|D,  E,  F,  ^F, G,2   G,2   |C,8   |
