@@ -1,9 +1,33 @@
-X:1
-T:My Hymn
-K:C
-%%text Verse 1
-%%text Amazing grace how sweet the sound
-%%text That saved a wretch like me
-%%text 
-%%text Chorus
-%%text I once was lost but now am found
+X:2
+T:2. Umwam'Ageze Kw'Irembo
+T:THE COMING KING IS AT THE DOOR
+C: F. E. Belden
+M:4/4
+L:1/8
+Q:1/4=120
+K:G
+I:linebreak $
+%%text AH 411
+%%text CH 546
+%%score (S A) (T B)
+V:S treble 
+V:A treble 
+V:T bass 
+V:B bass 
+V:S
+ D2 | G2 G2 G>A B>c | d6 e2 | B2- Bc B>A G>A | B6 $ D2 | G2 G2 G>A B>c | d6 e2 | d2- dG B2 A2 | %8
+ G6 B,>C | D6 G>A |$ B6 G>A | B2 B2 B>A B>c | d6 d>d | e4 c2 e>e | d4 B2 G>A |$ B2- Bc B2 A2 | %16
+ G6 |] %17
+V:A
+ D2 | D2 D2 D>D G>G | G6 G2 | G2- GG G>F E>F | G6 $ D2 | D2 D2 D>D G>A | G6 G2 | G2- GG G2 D2 | %8
+ D6 G,>A, | B,6 B,>C |$ D6 D>F | G2 G2 G>F G>A | G6 G>G | G4 G2 G>G | G4 G2 G>G |$ G2- GA G2 D2 | %16
+ D6 |] %17
+V:T
+ D,2 | B,2 B,2 B,>C D>C | B,6 C2 | D2- DE D>C B,>C | D6 $ C2 | B,2 B,2 B,>C D>C | B,6 C2 | %7
+ B,2- B,B, D2 C2 | B,6 z2 | z2 G,>G, G,2 z2 |$ z2 G,>G, G,2 B,>C | D2 D2 D>D D>C | B,6 B,>B, | %13
+ C<C C2 E2 C>C | B,<B, B,2 D2 B,>C |$ D2- DD D2 C2 | B,6 |] %17
+V:B
+ D,2 | G,,2 G,,2 G,>G, G,>G, | G,6 C,2 | G,2- G,G, G,>D, E,>D, | G,,6 $ D,2 | %5
+ G,,2 G,,2 G,>G, G,>G, | G,6 C,2 | D,2- D,D, D,2 D,2 | G,,6 z2 | z2 G,,>G,, G,,2 z2 |$ %10
+ z4 z2 G,>D, | G,2 G,2 G,>D, B,,>D, | G,6 G,>G, | C,<C, C,2 C,2 C,>C, | G,<G, G,2 G,2 G,>G, |$ %15
+ D,2- D,D, D,2 D,2 | G,,6 |] %17
