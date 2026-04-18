@@ -1,14 +1,13 @@
 {
-  "id": "001",
-  "title": "Indirimbo Zo Guhimbaza Imana",
+  "id": "003",
+  "title": "Indirimbo Zo Gushimisha Imana",
   "theme": {
     "primaryColor": "#752b2aff",
     "secondaryColor": "#e9afafff",
     "background": "#461a19ff"
   },
-  "logo": "/assets/logos/001.png",
+  "logo": "/assets/logos/003.png",
   "songs": [
-    "001", 
-    "002",
-    "014"]
+    "001"
+]
 }

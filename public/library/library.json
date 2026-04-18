@@ -8,6 +8,10 @@
         {
             "id": "002",
             "path": "/library/book-002/book.json"
+        },
+        {
+            "id": "003",
+            "path": "/library/book-003/book.json"
         }
     ]
 }
